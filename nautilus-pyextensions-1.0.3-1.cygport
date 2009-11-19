@@ -1,0 +1,15 @@
+DESCRIPTION="Nautilus Python extension manager"
+HOMEPAGE="http://open.vitaminap.it/en/nautilus_pyextensions.htm"
+SRC_URI="http://open.vitaminap.it/software/${PN}_${PV}.tar.gz"
+SRC_DIR=${PN}
+
+src_compile() { :; }
+
+src_install() {
+	cd ${S}
+	dobin ${PN}*
+	dodir /usr/share/${PN}
+	cp -r */ ${D}/usr/share/${PN}/
+	doicon glade/${PN}.svg
+	make_desktop_entry ${PN} "Nautilus PyExtensions" ${PN} "Settings" "" "OnlyShowIn=GNOME;"
+}

@@ -1,0 +1,5 @@
+category: Gnome
+requires: GConf2 nautilus-python python python-gconf2 python-gobject2.0 python-gtk2.0
+sdesc: "Nautilus Python extension manager"
+ldesc: "A graphical handler, written in Python and PyGTK, of the 
+Nautilus file manager Python extensions."
