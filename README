@@ -4,11 +4,11 @@ A graphical handler, written in Python and PyGTK, of the Nautilus file
 manager Python extensions.
 
 Runtime requirements:
-  nautilus-python-0.5.1-10
-  python-2.5.4-10
-  python-gconf2-2.28.0-1
-  python-gobject2.0-2.20.0-1
-  python-gtk2.0-2.16.0-1
+  nautilus-python-0.7.0-1
+  python-2.6.5-1
+  python-gconf2-2.28.1-1
+  python-gobject2.0-2.20.0-2
+  python-gtk2.0-2.16.0-2
 
 Canonical website:
   http://open.vitaminap.it/en/nautilus_pyextensions.htm
@@ -19,19 +19,22 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack nautilus-pyextensions-1.0.3-X-src.tar.bz2
+  unpack nautilus-pyextensions-1.0.6-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./nautilus-pyextensions-1.0.3-X.cygport all
+  cygport ./nautilus-pyextensions-1.0.6-X.cygport all
 
 This will create:
-  /usr/src/nautilus-pyextensions-1.0.3-X-src.tar.bz2
-  /usr/src/nautilus-pyextensions-1.0.3-X.tar.bz2
+  /usr/src/nautilus-pyextensions-1.0.6-X-src.tar.bz2
+  /usr/src/nautilus-pyextensions-1.0.6-X.tar.bz2
 
 -------------------------------------------
 
 Port Notes:
+
+----- version 1.0.6-1 -----
+Version bump.
 
 ----- version 1.0.3-1 -----
 Initial release for Cygwin 1.7.
