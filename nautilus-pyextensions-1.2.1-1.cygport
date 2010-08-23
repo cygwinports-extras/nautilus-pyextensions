@@ -1,7 +1,6 @@
 DESCRIPTION="Nautilus Python extension manager"
-HOMEPAGE="http://open.vitaminap.it/en/nautilus_pyextensions.htm"
-SRC_URI="http://open.vitaminap.it/software/${PN}_${PV}.tar.gz"
-SRC_DIR=${PN}
+HOMEPAGE="http://www.giuspen.com/nautilus_pyextensions/"
+SRC_URI="http://www.giuspen.com/software/nautilus-pyextensions-1.2.1.tar.gz"
 
 src_compile() { :; }
 
@@ -10,7 +9,7 @@ src_install() {
 	dobin ${PN}*
 
 	dodir /usr/share/${PN}
-	cp -r default-pyextensions/ glade/ ${D}/usr/share/${PN}/
+	cp -r default-pyextensions/ glade/ modules/ ${D}/usr/share/${PN}/
 
 	insinto /usr/share/icons/hicolor/scalable/apps
 	doins linux/${PN}.svg
