@@ -1,0 +1,8 @@
+inherit distutils
+
+DESCRIPTION="Nautilus Python extension manager"
+HOMEPAGE="http://www.giuspen.com/nautilus-pyextensions/"
+SRC_URI="http://www.giuspen.com/software/${P}.tar.gz"
+PATCH_URI="3.0-audacious3.patch
+	   3.0-no-prctl.patch"
+

@@ -1,0 +1,42 @@
+--- origsrc/nautilus-pyextensions-3.0/default-pyextensions/add-to-audacious2-playlist.py	2011-11-01 14:29:32.000000000 -0500
++++ src/nautilus-pyextensions-3.0/default-pyextensions/add-to-audacious2-playlist.py	2011-11-01 22:20:06.789899900 -0500
+@@ -53,7 +53,7 @@ class AddToAudaciousPlaylist(GObject.GOb
+ 
+     def run(self, menu, source_path_list):
+         """Runs the Adding of selected Audio file(s) to the Audacious Playlist"""
+-        subprocess.call("audacious2 -e " + " ".join(source_path_list) + " &", shell=True)
++        subprocess.call("audacious -e " + " ".join(source_path_list) + " &", shell=True)
+ 
+     def get_file_items(self, window, sel_items):
+         """Adds the 'Add To Audacious Playlist' menu item to the Nautilus right-click menu,
+@@ -72,8 +72,8 @@ class AddToAudaciousPlaylist(GObject.GOb
+                 source_path_list.append(source_path)
+         if source_path_list:
+             item = Nautilus.MenuItem(name='NautilusPython::audacious',
+-                                     label=_('Add To Audacious2 Playlist'),
+-                                     tip=_('Add the selected Audio file(s) to the Audacious2 Playlist'),
++                                     label=_('Add To Audacious Playlist'),
++                                     tip=_('Add the selected Audio file(s) to the Audacious Playlist'),
+                                      icon='audacious')
+             item.connect('activate', self.run, source_path_list)
+             return item,
+--- origsrc/nautilus-pyextensions-3.0/modules/core.py	2011-11-01 13:50:37.000000000 -0500
++++ src/nautilus-pyextensions-3.0/modules/core.py	2011-11-01 22:32:25.272654000 -0500
+@@ -216,7 +216,7 @@ class NautilusPyExtensions:
+             check_list = {}
+             if "meld-compare.py" in pyextensions_list: check_list["meld"] = "meld"
+             if "kdiff3-compare.py" in pyextensions_list: check_list["kdiff3"] = "kdiff3-qt"
+-            if "add-to-audacious2-playlist.py" in pyextensions_list: check_list["audacious2"] = "audacious"
++            if "add-to-audacious2-playlist.py" in pyextensions_list: check_list["audacious"] = "audacious"
+         else: check_list = dependency
+         for key in check_list:
+             if not os.path.isfile(cons.BIN_PATH_1 + key)\
+@@ -238,7 +238,7 @@ class NautilusPyExtensions:
+             if "meld" in model[path][2]:
+                 if not self.check_dependency({"meld":"meld"}): return
+             elif "audacious" in model[path][2]:
+-                if not self.check_dependency({"audacious2":"audacious"}): return
++                if not self.check_dependency({"audacious":"audacious"}): return
+             elif "kdiff3" in model[path][2]:
+                 if not self.check_dependency({"kdiff3":"kdiff3-qt"}): return
+             shutil.move(pyextension_not_active_path, pyextension_path) # move from not_active to active directory

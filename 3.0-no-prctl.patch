@@ -1,0 +1,12 @@
+--- origsrc/nautilus-pyextensions-3.0/nautilus-pyextensions	2011-11-01 13:50:37.000000000 -0500
++++ src/nautilus-pyextensions-3.0/nautilus-pyextensions	2011-11-01 22:08:20.880038600 -0500
+@@ -31,7 +31,8 @@ sys.path.append(MODULES_PATH)
+ import cons, core
+ 
+ libc = ctypes.cdll.LoadLibrary(ctypes.util.find_library("libc"))
+-libc.prctl(15, cons.APP_NAME, 0, 0, 0)
++try: libc.prctl(15, cons.APP_NAME, 0, 0, 0)
++except: pass
+ 
+ # language installation
+ try: gettext.translation(cons.APP_NAME, cons.LOCALE_PATH).install()
