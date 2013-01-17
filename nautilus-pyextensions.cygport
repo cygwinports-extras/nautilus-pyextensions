@@ -1,0 +1,15 @@
+inherit distutils
+
+NAME="nautilus-pyextensions"
+VERSION=3.0
+RELEASE=2
+CATEGORY="GNOME"
+SUMMARY="Nautilus Python extension manager"
+DESCRIPTION="A graphical handler, written in Python and PyGTK, of the
+Nautilus file manager Python extensions."
+HOMEPAGE="http://www.giuspen.com/nautilus-pyextensions/"
+SRC_URI="http://www.giuspen.com/software/${P}.tar.gz"
+PATCH_URI="3.0-audacious3.patch
+	   3.0-no-prctl.patch"
+
+REQUIRES="nautilus-python girepository-GConf2.0 girepository-GdkPixbuf2.0 girepository-Gtk3.0"

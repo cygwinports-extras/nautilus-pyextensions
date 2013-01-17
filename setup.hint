@@ -1,5 +1,0 @@
-category: Gnome
-requires: nautilus-python python python-gi girepository-GConf2.0 girepository-GdkPixbuf2.0 girepository-Gtk3.0
-sdesc: "Nautilus Python extension manager"
-ldesc: "A graphical handler, written in Python and PyGTK, of the 
-Nautilus file manager Python extensions."
